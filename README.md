@@ -1,154 +1,127 @@
-# 💰 Salary Calculator
+# Salary Calculator App 💰
 
-A robust and modern **cross-platform mobile application** built with **React Native** and **Expo** that helps users accurately calculate, compare, and track salary packages — all with a smooth, intuitive interface.
+[![GitHub License](https://img.shields.io/github/license/tanjil-islam/Salary-Calculator?color=blue)](LICENSE)
+[![GitHub Stars](https://img.shields.io/github/stars/tanjil-islam/Salary-Calculator)](https://github.com/tanjil-islam/Salary-Calculator/stargazers)
+[![Platform](https://img.shields.io/badge/platform-Android%20%7C%20iOS-brightgreen)](https://github.com/tanjil-islam/Salary-Calculator)
+[![Built with Expo](https://img.shields.io/badge/built%20with-Expo-000020?logo=expo)](https://expo.dev)
+
+A cross-platform mobile application built with **React Native**, **TypeScript**, and **Expo** for calculating, comparing, and tracking salary packages with a clean, intuitive interface.
+
+## Table of Contents 📖
+
+- [Features](#-features)
+- [Tech Stack](#-tech-stack)
+- [Installation](#-installation)
+- [Build APK](#-build-apk)
+- [Platform Support](#-platform-support)
+- [License](#-license)
+- [Contact](#-contact)
 
 ---
 
 ## ✨ Features
 
-- **Salary Calculation** — Quickly compute net salary, deductions, and take-home pay with a custom interactive number pad
-- **Salary Comparison** — Compare multiple job offers or salary packages side by side
-- **Calculation History** — Automatically save and revisit previous calculations using local async storage
-- **Slider-Based Inputs** — Intuitive slider controls for adjusting tax rates, bonuses, and deductions
-- **Light / Dark Mode** — Automatic system theme detection for a native look and feel
-- **Audio Feedback** — Subtle sound cues on key interactions for a polished UX
-- **Tab-Based Navigation** — Seamless navigation across Calculator, Compare, History, and Settings screens via Expo Router
-- **Haptic Feedback** — Native vibration responses on supported devices
+- **Salary Calculator:** Calculate net salary with tax deduction breakdowns
+- **Job Offer Comparison:** Compare multiple salary packages side by side
+- **Calculation History:** Track and review previous calculations
+- **Custom Number Pad:** Intuitive number input for easy data entry
+- **Light/Dark Mode:** Automatic theme switching based on device settings
+- **Audio Feedback:** Sound effects for better user interaction
+- **Tab Navigation:** Clean tab-based navigation for smooth UX
+- **Installable APK:** Published as a downloadable Android APK
 
 ---
 
-## 🛠️ Tech Stack
+## 💻 Tech Stack
 
-| Technology | Purpose |
-|---|---|
-| React Native `0.81.5` | Core mobile framework |
-| Expo `~54.0.29` | Development platform & tooling |
-| Expo Router `~6.0.19` | File-based tab navigation |
-| TypeScript `~5.9.2` | Type safety |
-| AsyncStorage | Persistent local calculation history |
-| React Native Reanimated | Smooth animations |
-| React Native Paper | Material Design UI components |
-| Expo AV | Audio feedback |
-| Expo Haptics | Haptic feedback |
-| Expo Linear Gradient | Gradient UI elements |
-| React Native Gesture Handler | Touch interactions |
+- **Framework:** React Native
+- **Language:** TypeScript
+- **Platform:** Expo
+- **Navigation:** React Navigation (Tab-based)
+- **Styling:** StyleSheet API
+- **Build:** EAS Build (Expo Application Services)
+
+---
+
+## 🛠 Installation
+
+1. Clone the repository
+   ```bash
+   git clone https://github.com/tanjil-islam/Salary-Calculator.git
+   cd Salary-Calculator
+   ```
+
+2. Install dependencies
+   ```bash
+   npm install
+   ```
+
+3. Start the Expo development server
+   ```bash
+   npx expo start
+   ```
+
+4. Scan the QR code with **Expo Go** app on your mobile device
+
+   *or press* `a` *for Android emulator / press* `i` *for iOS simulator*
+
+---
+
+## 📦 Build APK
+
+```bash
+# Install EAS CLI
+npm install -g eas-cli
+
+# Login to Expo
+eas login
+
+# Build for Android
+eas build --platform android --profile preview
+```
 
 ---
 
 ## 📁 Project Structure
 
 ```
-salary-calculator/
-├── app/              # Expo Router screens & tab layout
-├── assets/           # Images, fonts, and static files
-├── components/       # Reusable UI components (NumberPad, Slider, etc.)
-├── constants/        # App-wide constants (colors, sizes, tax rates)
-├── hooks/            # Custom React hooks
-├── scripts/          # Utility scripts (e.g., reset-project)
-├── src/              # Core business logic & calculation utilities
-├── app.json          # Expo app configuration
-├── eas.json          # EAS Build configuration
-├── tsconfig.json     # TypeScript configuration
-└── package.json      # Dependencies & scripts
+Salary-Calculator/
+├── app/
+│   ├── (tabs)/           # Tab-based navigation screens
+│   └── _layout.tsx       # Root layout configuration
+├── components/           # Reusable UI components
+├── constants/            # App constants and theme colors
+├── hooks/                # Custom React hooks
+└── README.md
 ```
 
 ---
 
-## 🚀 Getting Started
+## 📱 Platform Support
 
-### Prerequisites
-
-- [Node.js](https://nodejs.org/) (v18 or higher recommended)
-- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
-- [Expo Go](https://expo.dev/go) app on your iOS or Android device (for quick testing)
-- [Expo CLI](https://docs.expo.dev/get-started/installation/) (optional, for global use)
-
-### Installation
-
-1. **Clone the repository**
-
-   ```bash
-   git clone https://github.com/tanjil-islam/Salary-Calculator.git
-   cd Salary-Calculator
-   ```
-
-2. **Install dependencies**
-
-   ```bash
-   npm install
-   ```
-
-3. **Start the development server**
-
-   ```bash
-   npx expo start
-   ```
-
-4. **Run on a device or emulator**
-
-   - Press `a` to open on an Android emulator
-   - Press `i` to open on an iOS simulator
-   - Scan the QR code with **Expo Go** on your physical device
-
----
-
-## 📦 Available Scripts
-
-| Script | Description |
+| Platform | Status |
 |---|---|
-| `npm start` | Start the Expo development server |
-| `npm run android` | Launch on Android emulator/device |
-| `npm run ios` | Launch on iOS simulator/device |
-| `npm run web` | Launch in the browser |
-| `npm run lint` | Run ESLint to check code quality |
-| `npm run reset-project` | Reset the project to a clean state |
-
----
-
-## 🏗️ Building for Production
-
-This project uses [EAS Build](https://docs.expo.dev/build/introduction/) for creating production-ready builds.
-
-```bash
-# Install EAS CLI
-npm install -g eas-cli
-
-# Log in to your Expo account
-eas login
-
-# Build for Android
-eas build --platform android
-
-# Build for iOS
-eas build --platform ios
-```
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Here's how to get involved:
-
-1. Fork the repository
-2. Create a new branch: `git checkout -b feature/your-feature-name`
-3. Make your changes and commit: `git commit -m "feat: add your feature"`
-4. Push to your branch: `git push origin feature/your-feature-name`
-5. Open a Pull Request
+| Android | ✅ Supported (APK available) |
+| iOS | ✅ Supported via Expo Go |
 
 ---
 
 ## 📄 License
 
-This project is open source. Feel free to use and modify it as needed.
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
 
 ---
 
-## 👤 Author
+## 📧 Contact
 
-**Tanjil Islam**
+**Md. Tanjirul Islam**
+Full Stack Developer | React.js | Next.js | Node.js | NestJS
 
-- GitHub: [@tanjil-islam](https://github.com/tanjil-islam)
+[![Email](https://img.shields.io/badge/Email-tanjil.islam040820@gmail.com-red?style=flat&logo=gmail)](mailto:tanjil.islam040820@gmail.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-md--tanjirul--islam-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/md-tanjirul-islam-162a771b2/)
+[![GitHub](https://img.shields.io/badge/GitHub-tanjil--islam-black?style=flat&logo=github)](https://github.com/tanjil-islam)
 
 ---
 
-> Built with ❤️ using React Native & Expo
+⭐ Star this repo if you found it useful!
+💻 Happy Coding!
